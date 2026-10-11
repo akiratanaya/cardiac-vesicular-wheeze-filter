@@ -12,7 +12,7 @@ Desain awal disintesis menggunakan **Analog Devices Filter Wizard (FW v1.3)** da
 | :--- | :--- | :--- | :--- | :--- | :--- |
 | **Filter A** | Suara Jantung (*Cardiac / Heart Sound*) | 2-Stage Sallen-Key (HPF + LPF) | 20 Hz – 250 Hz | ~71 Hz | -40 dB @ 3 kHz |
 | **Filter B** | Suara Napas Vesikular (*Vesicular Breath*) | 2-Stage Sallen-Key (HPF + LPF) | 20 Hz – 150 Hz | ~55 Hz | -40 dB @ 3 kHz |
-| **Filter C** | Suara Napas Abnormal (*Wheeze & Crackle*) | 2-Stage Bandpass (Deliyannis-Friend / Sallen-Key) | 200 Hz – 1000 Hz | ~447 Hz | -40 dB @ 12 kHz |
+| **Filter C** | Suara Napas Abnormal (*Wheeze & Crackle*) | 2-Stage Deliyannis-Friend Bandpass | 200 Hz – 1000 Hz | ~447 Hz | -40 dB @ 12 kHz |
 
 ---
 
@@ -46,8 +46,8 @@ cardiac-vesicular-wheeze-filter/
     │   └── TransientAnalysis.asc                     # Simulasi respon domain waktu
     │
     ├── filter_c/                 # Rangkaian & simulasi Filter C (Suara Napas Abnormal)
-    │   ├── StageA_LowPassSallenKey_LT6233.asc/.asy   # Sub-circuit Stage A
-    │   ├── StageB_HighPassSallenKey_LT6233.asc/.asy  # Sub-circuit Stage B
+    │   ├── StageA_BandPassDeliyannisFriendNoPosFB_LT6233.asc/.asy   # Sub-circuit Deliyannis-Friend Stage A
+    │   ├── StageB_BandPassDeliyannisFriendNoPosFB_LT6233.asc/.asy   # Sub-circuit Deliyannis-Friend Stage B
     │   ├── ACAnalysis.asc                            # Simulasi respon frekuensi
     │   ├── NoiseAnalysis.asc                         # Simulasi kerapatan derau
     │   └── TransientAnalysis.asc                     # Simulasi respon domain waktu
